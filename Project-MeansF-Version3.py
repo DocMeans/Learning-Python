@@ -2,11 +2,8 @@
 # weekly amounts and prints those amounts int the console while writing the amounts to a .txt file.
 
 def menu(): # This function when called prints a list of choices the user can input
-    print("------Budget Program------")
-    print("Press 1. Enter Information")
-    print("Press 2. Print results")
-    print("Press 3. Exit program")
-    print("-----------Menu-----------")
+    print("------Budget Program------\nPress 1. Enter Information\nPress 2. Print results")
+    print("Press 3. Exit program\n-----------Menu-----------\n")
     
 def option1(): # This function collects user input calculates totals and writes contents to a file when called.
     mSalary = "" # Variables
