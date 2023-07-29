@@ -1,12 +1,12 @@
-Monthly income: 
-4562.0
-Monthly bills: 
-3215.0
+Monthly income:
+3218.0
+Monthly bills:
+1235.0
 Weekly pay: 
-1140.5
+ 804.5 
 Weekly bills: 
-803.75
+ 308.75 
 Weekly budget: 
-336.75
-Monthly budget: 
-1347.0
+ 495.75 
+Monthly budget:
+ 1983.0 

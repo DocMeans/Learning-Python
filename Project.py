@@ -5,7 +5,6 @@ def menu():  # This function when called prints a list of choices the user can i
     print("---***Budget Program***---\nPress 1. Enter Information\nPress 2. Print results")
     print("Press 3. Exit program\n---********Menu********---\n")
 
-
 def option1():  # This function collects user input calculates totals and,
     # writes contents to a file when called.
     # Variables
@@ -42,8 +41,8 @@ def option1():  # This function collects user input calculates totals and,
             validator = True
 
     file = open('Budget.txt', 'w')  # Open/create and name file then write initial user input to the file
-    file.write("Monthly income: " + "\n" + str(mSalary) + '\n')
-    file.write("Monthly bills: " + "\n" + str(mBills) + '\n')
+    file.write(f"Monthly income:\n{str(mSalary)}\n")
+    file.write(f"Monthly bills:\n{str(mBills)}\n")
     file.close()  # Closes the File
 
     file = open('Budget.txt', 'r')  # Open file to read information for calculation(s)
@@ -61,14 +60,11 @@ def option1():  # This function collects user input calculates totals and,
 
     # This section opens the file and appends new amounts and labels to the existing file
     file = open('Budget.txt', 'a')
-    file.write("Weekly pay: " + '\n' + str(round(wSalary, 2)) + '\n')  # Label and write weekly pay to the .txt file
-    file.write("Weekly bills: " + '\n' + str(round(wBills, 2)) + '\n')  # Label and write weekly bills to the .txt file
-    file.write("Weekly budget: " + '\n' + str(
-        round(netDifference, 2)) + '\n')  # Label and write weekly income after bills to the .txt file
-    file.write("Monthly budget: " + '\n' + str(
-        round(mDifference, 2)) + '\n')  # Label and write monthly income after bills to the .txt file
+    file.write(f"Weekly pay: \n {str(round(wSalary, 2))} \n")  # Label and write weekly pay to the .txt file
+    file.write(f"Weekly bills: \n {str(round(wBills, 2))} \n")  # Label and write weekly bills to the .txt file
+    file.write(f"Weekly budget: \n {str(round(netDifference, 2))} \n")  # Label and write weekly income after bills to the .txt file
+    file.write(f"Monthly budget:\n {str(round(mDifference, 2))} \n")  # Label and write monthly income after bills to the .txt file
     file.close()  # Closes the File 
-
 
 def option2():  # This function reads file contents and prints results to the console when called
     file = open('Budget.txt', 'r')
@@ -76,10 +72,8 @@ def option2():  # This function reads file contents and prints results to the co
     print(fileData)
     file.close()  # Closes the File
 
-
 def option3():  # This function exits the program when called
     exit()
-
 
 while True:  # loop controls the functions for the menu
     menu()
@@ -93,6 +87,4 @@ while True:  # loop controls the functions for the menu
         option3()
     else:
         print("Invalid input, Please try again\n")
-        # print("\n")
     input("Press enter to return to menu\n")
-    # print("\n")
