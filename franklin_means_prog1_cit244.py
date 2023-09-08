@@ -4,10 +4,20 @@
 '''Project one'''
 class Contact(object):
     '''Class for contacts'''
+    contacts = []
     def __init__(self, first_name, last_name, email):
         self.fname = first_name
         self.lname = last_name
         self.mail = email
+
+    def show_contacts(contacts):
+        '''this function shows contacts in the console when called'''
+
+        print("----------Contacts------------") # for asthetics
+        print("Last Name\tFirst Name\t\tEmail")
+        for contact in contacts: # this loop reads the list item by item
+            print(f"{contact.lname}\t\t{contact.fname}\t\t\t{contact.mail}")
+        print("------------------------------") # for asthetics
 
 # ----------------------End Class--------------------
 
@@ -23,20 +33,7 @@ def add_contact(contacts):
     new_contact = Contact(fname, lname, mail)
     contacts.append(new_contact)
 
-def show_contacts(contacts):
-    '''this function shows contacts in the console when called'''
 
-    contacts2 = [] # Hard list of contacts
-    contacts2.append({"first": "sue", "last": "smith", "email": "asmith@wer.com",})
-    contacts2.append({"first": "hugh", "last":"dean", "email":"hrdean@abc.com",})
-    contacts2.append({"first": "mac", "last":"davis", "email":"mdavis@asd.com", })
-    print("----------Contacts------------") # for asthetics
-    print("Last Name\tFirst Name\t\tEmail")
-    for contact in contacts2: # this loop reads the dictionary and prints the results
-        print(contact['last'] + "\t\t" + contact['first'] + "\t\t\t" + contact['email'])
-    for contact in contacts: # this loop reads the list item by item
-        print(f"{contact.lname}\t\t{contact.fname}\t\t\t{contact.mail}")
-    print("------------------------------") # for asthetics
 
 def menu(contacts):
     '''this runs the main program which shows a menu and calls the appropriate functions'''
@@ -49,7 +46,7 @@ def menu(contacts):
         option = input("Select an option. (1, 2, 3): ")
         #When an option is chosen, that function will be called
         if option == "1":
-            show_contacts(contacts)
+            Contact.show_contacts(contacts)
 
         elif option == "2":
             add_contact(contacts)
@@ -63,8 +60,7 @@ def menu(contacts):
 
 def main():
     '''Run the program'''
-    contacts = []
-    menu(contacts)
+    menu(Contact.contacts)
 
 if __name__ == "__main__":
     main()
