@@ -109,17 +109,17 @@ class DataList(wx.Frame):
             try:
                 con = db.connect('trucks.sqlite')  # connect to db
                 cur = con.cursor()
-                #["toyota", "kamatsu", "hyster", "mitsubishi", "catepillar"]
+                # current tables ["toyota", "kamatsu", "hyster", "mitsubishi", "catepillar"]
                 if dlg.comboBox.GetValue() == "toyota":
                     sql = "INSERT INTO toyota VALUES (?, ?, ?)"
                 if dlg.comboBox.GetValue() == "kamatsu":
                     sql = "INSERT INTO kamatsu VALUES (?, ?, ?)"
-                # if dlg.comboBox.GetValue() == "hyster":
-                #     sql = "INSERT INTO hyster VALUES (?, ?, ?)"
-                # if dlg.comboBox.GetValue() == "mitsubishi":
-                #     sql = "INSERT INTO mitsubishi VALUES (?, ?, ?)"
-                # if dlg.comboBox.GetValue() == "catepillar":
-                #     sql = "INSERT INTO catepillar VALUES (?, ?, ?)"         
+                if dlg.comboBox.GetValue() == "hyster":
+                    sql = "INSERT INTO hyster VALUES (?, ?, ?)"
+                if dlg.comboBox.GetValue() == "mitsubishi":
+                    sql = "INSERT INTO mitsubishi VALUES (?, ?, ?)"
+                if dlg.comboBox.GetValue() == "catepillar":
+                    sql = "INSERT INTO catepillar VALUES (?, ?, ?)"         
 
                 cur.execute(sql, (sNum, yr, mod))
                 con.commit()          # complete the transaction
