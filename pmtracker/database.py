@@ -1,9 +1,9 @@
-import sqlite3
+import sqlite3 as db
 
 
 class DatabaseManager:
     def __init__(self, main):
-        self.conn = sqlite3.connect(main.db)
+        self.conn = db.connect(main.db)
         self.cursor = self.conn.cursor()
         self.create_table()
 
@@ -19,10 +19,6 @@ class DatabaseManager:
         query = "SELECT * from pm_schdule"
         self.cursor.execute(query)
         return self.cursor.fetchall()
-    
+
     def close(self):
         self.cursor.close()
-
-    
-
-
